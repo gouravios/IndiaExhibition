@@ -13,10 +13,18 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        /*
+         Initialize configuration end point with scheme selected. This will set up base url
+         */
+        if let dict = Bundle.main.infoDictionary,
+            let _ = dict["APP_ENV"] as? String {
+            EXHConfigEndPoints.shared.initialize()
+        }
+        
         return true
     }
 

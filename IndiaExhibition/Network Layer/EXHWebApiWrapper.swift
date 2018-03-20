@@ -45,7 +45,6 @@ class EXHWebAPIWrapper {
         if let url4 = objRequestable.requestURL() {
             let session4 = URLSession.shared
             let request = NSMutableURLRequest(url: url4)
-            
             request.httpMethod = objRequestable.httpType.rawValue
             request.cachePolicy = NSURLRequest.CachePolicy.reloadIgnoringCacheData
             request.allHTTPHeaderFields = objRequestable.httpHeaders()
