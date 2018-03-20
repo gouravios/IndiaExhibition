@@ -15,6 +15,10 @@ enum HttpType:String {
     case delete = "DELETE"
 }
 
+protocol Notifiable:class {
+    func didLoadData(model:Any?, info:Any?, error:Error?)
+}
+
 /*
  All request model should comfirm this protocol
  */
@@ -68,6 +72,13 @@ extension EXHRequestable {
         dict["Content-Type"] = "application/json"
         return dict
     }
+}
+
+
+
+protocol ViewModelParams {
+    
+    func apiCallWithType(type:EXHPostServicePath)
 }
 
 struct UsersEnvelop:EXHRequestable {

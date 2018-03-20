@@ -13,6 +13,7 @@ struct EXHUserInfoRequest:EXHRequestable {
     var queryParams:[String:String]?
 }
 
+
 class UserInfo:Identifiable {
 
     var first_name:String?
@@ -56,7 +57,6 @@ class UserInfo:Identifiable {
                         userInfo.uniqueId = dict["UniqueId"] as? String
                     }
                   
-        
                     return .success(userInfo)
                   
                 }

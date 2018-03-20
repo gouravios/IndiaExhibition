@@ -9,15 +9,6 @@
 import Foundation
 
 
-protocol ViewModelParams {
-    
-    func apiCallWithType(type:EXHPostServicePath)
-}
-
-protocol Notifiable:class {
-    
-    func didLoadData(model:Any?, info:Any?, error:Error?)
-}
 
 class EXHLoginViewModel : ViewModelParams {
   

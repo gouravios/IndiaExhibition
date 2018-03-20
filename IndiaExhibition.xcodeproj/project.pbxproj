@@ -20,11 +20,12 @@
 		9B2FC20F206051EF00410E71 /* EXHConfigEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FC20E206051EF00410E71 /* EXHConfigEndPoint.swift */; };
 		9B2FC2112060537900410E71 /* EXHResponsable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FC2102060537900410E71 /* EXHResponsable.swift */; };
 		9B2FC21320605A0D00410E71 /* EXHLoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FC21220605A0D00410E71 /* EXHLoginViewModel.swift */; };
-		9B2FC21520605A1E00410E71 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FC21420605A1E00410E71 /* RegistrationViewModel.swift */; };
 		9B2FC21720605AD500410E71 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FC21620605AD500410E71 /* BaseViewModel.swift */; };
 		9B2FC2192060604600410E71 /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2FC2182060604600410E71 /* UserInfo.swift */; };
 		9BE7967B2060EDD70019628E /* EXHSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7967A2060EDD70019628E /* EXHSignInController.swift */; };
 		9BE7967D2060EDEE0019628E /* EXHRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */; };
+		9BE796822061B2BC0019628E /* EXHRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE796812061B2BB0019628E /* EXHRegistrationViewModel.swift */; };
+		9BE796842061B5BF0019628E /* EXHEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE796832061B5BF0019628E /* EXHEventsViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,11 +56,12 @@
 		9B2FC20E206051EF00410E71 /* EXHConfigEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXHConfigEndPoint.swift; sourceTree = "<group>"; };
 		9B2FC2102060537900410E71 /* EXHResponsable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHResponsable.swift; sourceTree = "<group>"; };
 		9B2FC21220605A0D00410E71 /* EXHLoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHLoginViewModel.swift; sourceTree = "<group>"; };
-		9B2FC21420605A1E00410E71 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
 		9B2FC21620605AD500410E71 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		9B2FC2182060604600410E71 /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		9BE7967A2060EDD70019628E /* EXHSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHSignInController.swift; sourceTree = "<group>"; };
 		9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHRegistrationController.swift; sourceTree = "<group>"; };
+		9BE796812061B2BB0019628E /* EXHRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHRegistrationViewModel.swift; sourceTree = "<group>"; };
+		9BE796832061B5BF0019628E /* EXHEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHEventsViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				9B2FC21220605A0D00410E71 /* EXHLoginViewModel.swift */,
-				9B2FC21420605A1E00410E71 /* RegistrationViewModel.swift */,
 				9B2FC21620605AD500410E71 /* BaseViewModel.swift */,
+				9BE796812061B2BB0019628E /* EXHRegistrationViewModel.swift */,
+				9BE796832061B5BF0019628E /* EXHEventsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -267,10 +270,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B2FC21520605A1E00410E71 /* RegistrationViewModel.swift in Sources */,
 				9B2FC209206051AF00410E71 /* EXHRequestable.swift in Sources */,
 				9B2FC20F206051EF00410E71 /* EXHConfigEndPoint.swift in Sources */,
 				9B2FC2112060537900410E71 /* EXHResponsable.swift in Sources */,
+				9BE796822061B2BC0019628E /* EXHRegistrationViewModel.swift in Sources */,
 				9B2FC21720605AD500410E71 /* BaseViewModel.swift in Sources */,
 				9B2FC20B206051B600410E71 /* EXHNetworkEndPoints.swift in Sources */,
 				9B2FC1CE206048F100410E71 /* IndiaExhibition.xcdatamodeld in Sources */,
@@ -280,6 +283,7 @@
 				9B2FC207206051AA00410E71 /* EXHPostServicePath.swift in Sources */,
 				9B2FC21320605A0D00410E71 /* EXHLoginViewModel.swift in Sources */,
 				9BE7967B2060EDD70019628E /* EXHSignInController.swift in Sources */,
+				9BE796842061B5BF0019628E /* EXHEventsViewModel.swift in Sources */,
 				9B2FC2052060519000410E71 /* EXHWebApiWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -434,7 +438,6 @@
 			buildSettings = {
 				APP_ENV = Debug;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53326A7Q7R;
 				INFOPLIST_FILE = IndiaExhibition/Info.plist;
@@ -451,7 +454,6 @@
 			buildSettings = {
 				APP_ENV = Release;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "LaunchImage-2";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53326A7Q7R;
 				INFOPLIST_FILE = IndiaExhibition/Info.plist;

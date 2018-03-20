@@ -76,7 +76,6 @@ enum APIErrorType:Error {
             return b
         }
     }
-    
 }
 
 extension APIErrorType {
