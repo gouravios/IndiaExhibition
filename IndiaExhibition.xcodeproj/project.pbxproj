@@ -26,6 +26,7 @@
 		9BE7967D2060EDEE0019628E /* EXHRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */; };
 		9BE796822061B2BC0019628E /* EXHRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE796812061B2BB0019628E /* EXHRegistrationViewModel.swift */; };
 		9BE796842061B5BF0019628E /* EXHEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE796832061B5BF0019628E /* EXHEventsViewModel.swift */; };
+		9BE7968B2062D9D80019628E /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7968A2062D9D80019628E /* UserDefaultHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHRegistrationController.swift; sourceTree = "<group>"; };
 		9BE796812061B2BB0019628E /* EXHRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHRegistrationViewModel.swift; sourceTree = "<group>"; };
 		9BE796832061B5BF0019628E /* EXHEventsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHEventsViewModel.swift; sourceTree = "<group>"; };
+		9BE7968A2062D9D80019628E /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,13 +106,16 @@
 			isa = PBXGroup;
 			children = (
 				9B2FC1C5206048F100410E71 /* AppDelegate.swift */,
-				9BE796792060E8030019628E /* Controller */,
+				9BE796872062CCA60019628E /* CoreDataStack */,
+				9BE796862062CC770019628E /* Manager */,
 				9B2FC1EB20604BF900410E71 /* Network Layer */,
 				9B2FC1EA2060498D00410E71 /* Model */,
 				9B2FC1E82060498D00410E71 /* ViewModel */,
-				9B2FC1C9206048F100410E71 /* Main.storyboard */,
+				9BE796792060E8030019628E /* Controller */,
+				9BE796892062CCEE0019628E /* Custom Views */,
+				9BE796882062CCC30019628E /* Helper Classes */,
+				9BE796852062CC460019628E /* Launch UI */,
 				9B2FC1CF206048F100410E71 /* Assets.xcassets */,
-				9B2FC1D1206048F100410E71 /* LaunchScreen.storyboard */,
 				9B2FC1D4206048F100410E71 /* Info.plist */,
 				9B2FC1CC206048F100410E71 /* IndiaExhibition.xcdatamodeld */,
 			);
@@ -165,6 +170,44 @@
 				9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		9BE796852062CC460019628E /* Launch UI */ = {
+			isa = PBXGroup;
+			children = (
+				9B2FC1D1206048F100410E71 /* LaunchScreen.storyboard */,
+				9B2FC1C9206048F100410E71 /* Main.storyboard */,
+			);
+			path = "Launch UI";
+			sourceTree = "<group>";
+		};
+		9BE796862062CC770019628E /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		9BE796872062CCA60019628E /* CoreDataStack */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CoreDataStack;
+			sourceTree = "<group>";
+		};
+		9BE796882062CCC30019628E /* Helper Classes */ = {
+			isa = PBXGroup;
+			children = (
+				9BE7968A2062D9D80019628E /* UserDefaultHelper.swift */,
+			);
+			path = "Helper Classes";
+			sourceTree = "<group>";
+		};
+		9BE796892062CCEE0019628E /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +319,7 @@
 				9BE796822061B2BC0019628E /* EXHRegistrationViewModel.swift in Sources */,
 				9B2FC21720605AD500410E71 /* BaseViewModel.swift in Sources */,
 				9B2FC20B206051B600410E71 /* EXHNetworkEndPoints.swift in Sources */,
+				9BE7968B2062D9D80019628E /* UserDefaultHelper.swift in Sources */,
 				9B2FC1CE206048F100410E71 /* IndiaExhibition.xcdatamodeld in Sources */,
 				9B2FC2192060604600410E71 /* UserInfo.swift in Sources */,
 				9BE7967D2060EDEE0019628E /* EXHRegistrationController.swift in Sources */,
