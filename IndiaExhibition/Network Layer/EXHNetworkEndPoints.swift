@@ -11,11 +11,11 @@ import Foundation
 struct EXHNetworkEndPoints {
     
     static func getDevBaseURL()->String {
-        return "https://dev-soundmondo.yamahasynth.com"
+        return "http://indiaexhibitionevents.com"
     }
     
     static func getProductionBaseURL()->String {
-        return "https://dev-soundmondo.yamahasynth.com"
+        return "http://indiaexhibitionevents.com"
     }
     
     static func users(userId:String?=nil)->String {

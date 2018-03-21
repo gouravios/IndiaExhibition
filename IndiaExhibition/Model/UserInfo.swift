@@ -3,12 +3,30 @@
 import Foundation
 
 
+struct EXHUserInfoRequest:EXHRequestable {
+    var apiPath:String?
+    var httpType:HttpType
+    var pathType :EXHPostServicePath?
+    var modelType:Identifiable.Type? {
+        return UserInfo.self
+    }
+    var queryParams:[String:String]?
+}
+
+
 class UserInfo:Identifiable {
 
-    var userId:String?
-    var firstName:String?
+    var first_name:String?
+    var last_name:String?
     var email:String?
-    var lastName:String?
+    var phone:String?
+    var password:String?
+    var signType:String?
+    var userType:String?
+    var uniqueId:String?
+    
+    //response coming from server
+   
     
     static func parseJSON(data:Any?)->ResponseResult<Any>? {
 
@@ -20,23 +38,31 @@ class UserInfo:Identifiable {
             
             print(jsonObj)
             
-            var arrItems = [[String:Any]]()
+          //  var arrItems = [[String:Any]]()
             if let dictJSONObj = jsonObj as? [String:Any] {
            
-                if let results = dictJSONObj["results"] {
+                if let results = dictJSONObj["User"] {
+                    
+                    let userInfo = UserInfo()
                     
                     if let dict = results as? [String:Any] {
-                        arrItems.append(dict)
+                        
+                        userInfo.first_name = dict["FirstName"] as? String
+                        userInfo.last_name = dict["LastName"] as? String
+                        userInfo.email = dict["Email"] as? String
+                        userInfo.phone = dict["Phone"] as? String
+                        userInfo.password = dict["Password"] as? String
+                        userInfo.signType = dict["SignType"] as? String
+                        userInfo.userType = dict["UserType"] as? String
+                        userInfo.uniqueId = dict["UniqueId"] as? String
                     }
-                    else if let arr = results as? [[String:Any]] {
-                        arrItems = arr
-                    }
+                  
+                    return .success(userInfo)
+                  
                 }
             }
-           
-            
-        
         }  catch {
+            
             return .failure(error)
         }
         
