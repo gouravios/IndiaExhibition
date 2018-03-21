@@ -61,9 +61,9 @@ class UserInfo:Identifiable {
                   
                 }
             }
-        }  catch {
+        }  catch let jsonError {
             
-            return .failure(error)
+            return .failure(jsonError)
         }
         
         return nil
