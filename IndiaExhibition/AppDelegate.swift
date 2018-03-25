@@ -8,9 +8,15 @@
 
 import UIKit
 import CoreData
+import FBSDKCoreKit
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+   
+    
+    
+    
 
     var window: UIWindow?
     
@@ -24,6 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let _ = dict["APP_ENV"] as? String {
             EXHConfigEndPoints.shared.initialize()
         }
+        // Facebook login steps
+        FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions)
+        
+        //Google login steps
+        GIDSignIn.sharedInstance().clientID = "572105944197-oqnaufbb0ms0oafhadajnqe3ib2o3msp.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance().delegate = self
         
         return true
     }
@@ -51,7 +63,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    //MARK: for facebook and Google login
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        
+        FBSDKApplicationDelegate.sharedInstance().application(app, open: url, sourceApplication: UIApplicationOpenURLOptionsKey.sourceApplication.rawValue, annotation: UIApplicationOpenURLOptionsKey.annotation)
+        
+        return GIDSignIn.sharedInstance().handle(url,
+                                                    sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                    annotation: options[UIApplicationOpenURLOptionsKey.annotation])
+        
+    }
+    
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url,
+                                                 sourceApplication: sourceApplication,
+                                                 annotation: annotation)
+    }
 
+    //MARK: Google delegate methods
+    // sign in handler
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print("\(error.localizedDescription)")
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: nil)
+        }
+        else {
+            let userId = user.userID
+            let idToken = user.authentication.idToken
+            let fullName = user.profile.name
+            let givenName = user.profile.givenName
+            let familyName = user.profile.familyName
+            let email = user.profile.email
+            
+            NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: ["statusText": "Signed in user:\n\(fullName)"])
+        }
+        
+    }
+    
+    //disconnect handler
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        NotificationCenter.default.post(name: Notification.Name(rawValue: "ToggleAuthUINotification"), object: nil, userInfo: ["statusText": "User has disconnected."])
+    }
+    
+    
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentContainer = {
