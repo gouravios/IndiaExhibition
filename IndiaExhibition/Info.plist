@@ -2,6 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.googleusercontent.apps.572105944197-oqnaufbb0ms0oafhadajnqe3ib2o3msp</string>
+				<string>fb156228491710360</string>
+			</array>
+		</dict>
+	</array>
+	<key>FacebookAppID</key>
+	<string>156228491710360</string>
+	<key>FacebookDisplayName</key>
+	<string>IndiaExhibition</string>
 	<key>APP_ENV</key>
 	<string>$(APP_ENV)</string>
 	<key>CFBundleDevelopmentRegion</key>
@@ -47,6 +61,11 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbauth2</string>
+		<string>fbapi</string>
 	</array>
 </dict>
 </plist>

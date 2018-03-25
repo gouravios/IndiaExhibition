@@ -7,7 +7,15 @@
 //
 
 import UIKit
-//import FacebookLogin
+import FacebookLogin
+import FacebookCore
+import FacebookShare
+
+import FBSDKCoreKit
+import FBSDKLoginKit
+import FBSDKShareKit
+
+import GoogleSignIn
 
 class EXHSignInController: UIViewController, Notifiable {
     
@@ -17,16 +25,19 @@ class EXHSignInController: UIViewController, Notifiable {
     @IBOutlet weak var txtPassword: UITextField!
     
     
+    
     let viewModel = EXHLoginViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         viewModel.delegate = self
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        //GIDSignIn.sharedInstance().signIn()
+        
         self.callLoginService()
         // Do any additional setup after loading the view.
-        
-        //Facebook login steps
         
     }
     
@@ -60,10 +71,9 @@ class EXHSignInController: UIViewController, Notifiable {
     }
     //MARK: IBAction corresponding to Button
     
-    @IBAction func facebookSignInButtonClicked(_ sender: UIButton) {
-        
-    }
+   
     
+    // Sign in button clicked
     @IBAction func signInButtonClicked(_ sender: UIButton) {
         
         if (txtEmail.text?.isEmpty)! {
@@ -94,6 +104,39 @@ class EXHSignInController: UIViewController, Notifiable {
             // web services remaining
             
         }
+        
+    }
+    
+    // Facebook ign in button clicked
+    @IBAction func facebookSignInButtonClicked(_ sender: UIButton) {
+        
+        let loginManager = LoginManager()
+        loginManager.logIn(publishPermissions: [.publishActions], viewController: self) { (loginResult) in
+            
+            switch loginResult {
+            case .failed(let error):
+                print(error)
+            case .cancelled:
+                print("User cancelled login.")
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                print("Logged in")
+               // print(accessToken)
+              //facebook current logged in user ID
+                //  print(FBSDKAccessToken.current().userID)
+                //call web services
+            }
+        }
+    }
+
+    //Google sign in button clicked
+    
+    
+    @IBAction func googleSignInButtonClicked(_ sender: UIButton) {
+        
+        GIDSignIn.sharedInstance().signIn()
+        //google currently logged in user ID
+        //print(GIDSignIn.sharedInstance().currentUser)
+        
         
     }
     
@@ -137,7 +180,23 @@ extension EXHSignInController : UITextFieldDelegate {
     }
     
     
+}
+
+//MARK: Google Sign in
+
+extension EXHSignInController : GIDSignInUIDelegate {
     
+//    func sign(inWillDispatch signIn: GIDSignIn!, error: Error!) {
+//        myActivityIndicator.stopAnimating()
+//    }
+    
+    func sign(_ signIn: GIDSignIn!, present viewController: UIViewController!) {
+        self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func sign(_ signIn: GIDSignIn!, dismiss viewController: UIViewController!) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 }
 

@@ -1,0 +1,6 @@
+framework module Pods_IndiaExhibitionTests {
+  umbrella header "Pods-IndiaExhibitionTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
