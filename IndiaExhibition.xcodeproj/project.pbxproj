@@ -29,6 +29,7 @@
 		9BE796842061B5BF0019628E /* EXHEventsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE796832061B5BF0019628E /* EXHEventsViewModel.swift */; };
 		9BE7968B2062D9D80019628E /* UserDefaultHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7968A2062D9D80019628E /* UserDefaultHelper.swift */; };
 		DB17AE62206597A60066A2F1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB17AE61206597A60066A2F1 /* Main.storyboard */; };
+		DB2D12A420685BA700B453E2 /* EXHForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB2D12A320685BA700B453E2 /* EXHForgotPasswordController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9BE7968A2062D9D80019628E /* UserDefaultHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultHelper.swift; sourceTree = "<group>"; };
 		D46578E11ED3859043982309 /* Pods_IndiaExhibitionTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IndiaExhibitionTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB17AE61206597A60066A2F1 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		DB2D12A320685BA700B453E2 /* EXHForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHForgotPasswordController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 			children = (
 				9BE7967A2060EDD70019628E /* EXHSignInController.swift */,
 				9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */,
+				DB2D12A320685BA700B453E2 /* EXHForgotPasswordController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -474,6 +477,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2D12A420685BA700B453E2 /* EXHForgotPasswordController.swift in Sources */,
 				9B2FC209206051AF00410E71 /* EXHRequestable.swift in Sources */,
 				9B2FC20F206051EF00410E71 /* EXHConfigEndPoint.swift in Sources */,
 				9B2FC2112060537900410E71 /* EXHResponsable.swift in Sources */,
