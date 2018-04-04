@@ -50,27 +50,30 @@ extension EXHLeftSliderViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "cell")
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        }
-        let label = cell?.viewWithTag(100)as! UILabel
-        label.text = list[(indexPath as NSIndexPath).row]
         
+        let cell = tableView.dequeueReusableCell(withIdentifier: "LeftMenuCell") as! LeftMenuCell
         
-        let imgView_left = cell?.viewWithTag(101)as! UIImageView
-        imgView_left.image = UIImage(named: img_Slider[(indexPath as NSIndexPath).row])
+        cell.lblDescription.text = list[(indexPath as NSIndexPath).row]
+        cell.iconImage.image = UIImage(named: img_Slider[(indexPath as NSIndexPath).row])
         
-        return cell!
+        return cell
     }
     
 }
 
 extension EXHLeftSliderViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("Index Pressed:\((indexPath as NSIndexPath).row)")
         
-        
+        let cell = tableView.cellForRow(at: indexPath) as! LeftMenuCell
+        cell.lblDescription.textColor = UIColor.red
+    
         delegate?.indexSelected((indexPath as NSIndexPath).row)
+    }
+    
+   func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+    
+    let cell = tableView.cellForRow(at: indexPath) as! LeftMenuCell
+    cell.lblDescription.textColor = UIColor.black
+    
     }
 }

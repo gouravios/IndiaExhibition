@@ -27,8 +27,12 @@
 		9B5FC80D2072AA4B004FB9A7 /* EXHContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FC80A2072AA4B004FB9A7 /* EXHContainerViewController.swift */; };
 		9B5FC80E2072AA4B004FB9A7 /* EXHLeftSliderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FC80B2072AA4B004FB9A7 /* EXHLeftSliderViewController.swift */; };
 		9B5FC8102072D67C004FB9A7 /* EXHGlobalNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5FC80F2072D67B004FB9A7 /* EXHGlobalNavigationController.swift */; };
+		9BAE021A20755A3D00BF5D47 /* LeftMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE021920755A3D00BF5D47 /* LeftMenuCell.swift */; };
+		9BAE021C207570E700BF5D47 /* EXHFavouriteController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAE021B207570E700BF5D47 /* EXHFavouriteController.swift */; };
 		9BDCD6872073F89D0042A84C /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDCD6862073F89D0042A84C /* StringExtension.swift */; };
 		9BDCD689207406740042A84C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDCD688207406740042A84C /* Constants.swift */; };
+		9BDCD69020754FD50042A84C /* EXHHomeViewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDCD68F20754FD50042A84C /* EXHHomeViewContainer.swift */; };
+		9BDCD692207550B30042A84C /* EXHMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDCD691207550B30042A84C /* EXHMapViewController.swift */; };
 		9BE7967B2060EDD70019628E /* EXHSignInController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7967A2060EDD70019628E /* EXHSignInController.swift */; };
 		9BE7967D2060EDEE0019628E /* EXHRegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */; };
 		9BE796822061B2BC0019628E /* EXHRegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BE796812061B2BB0019628E /* EXHRegistrationViewModel.swift */; };
@@ -81,8 +85,12 @@
 		9B5FC80A2072AA4B004FB9A7 /* EXHContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXHContainerViewController.swift; sourceTree = "<group>"; };
 		9B5FC80B2072AA4B004FB9A7 /* EXHLeftSliderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXHLeftSliderViewController.swift; sourceTree = "<group>"; };
 		9B5FC80F2072D67B004FB9A7 /* EXHGlobalNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EXHGlobalNavigationController.swift; sourceTree = "<group>"; };
+		9BAE021920755A3D00BF5D47 /* LeftMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftMenuCell.swift; sourceTree = "<group>"; };
+		9BAE021B207570E700BF5D47 /* EXHFavouriteController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHFavouriteController.swift; sourceTree = "<group>"; };
 		9BDCD6862073F89D0042A84C /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		9BDCD688207406740042A84C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		9BDCD68F20754FD50042A84C /* EXHHomeViewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHHomeViewContainer.swift; sourceTree = "<group>"; };
+		9BDCD691207550B30042A84C /* EXHMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHMapViewController.swift; sourceTree = "<group>"; };
 		9BE7967A2060EDD70019628E /* EXHSignInController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHSignInController.swift; sourceTree = "<group>"; };
 		9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHRegistrationController.swift; sourceTree = "<group>"; };
 		9BE796812061B2BB0019628E /* EXHRegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EXHRegistrationViewModel.swift; sourceTree = "<group>"; };
@@ -226,6 +234,7 @@
 				9B5FC80A2072AA4B004FB9A7 /* EXHContainerViewController.swift */,
 				9B5FC80B2072AA4B004FB9A7 /* EXHLeftSliderViewController.swift */,
 				9B5FC8092072AA4B004FB9A7 /* EXHSliderSuperViewController.swift */,
+				9BAE021920755A3D00BF5D47 /* LeftMenuCell.swift */,
 			);
 			path = SlideMenu;
 			sourceTree = "<group>";
@@ -244,8 +253,11 @@
 				9BE7967A2060EDD70019628E /* EXHSignInController.swift */,
 				9BE7967C2060EDEE0019628E /* EXHRegistrationController.swift */,
 				DB2D12A320685BA700B453E2 /* EXHForgotPasswordController.swift */,
-				DB09DFC92068804400D1F028 /* EXHHomeViewController.swift */,
 				DB09DFCD206DD37400D1F028 /* ExhibitionCell.swift */,
+				9BDCD68F20754FD50042A84C /* EXHHomeViewContainer.swift */,
+				DB09DFC92068804400D1F028 /* EXHHomeViewController.swift */,
+				9BDCD691207550B30042A84C /* EXHMapViewController.swift */,
+				9BAE021B207570E700BF5D47 /* EXHFavouriteController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -547,18 +559,22 @@
 				9BE7968B2062D9D80019628E /* UserDefaultHelper.swift in Sources */,
 				DB09DFCE206DD37400D1F028 /* ExhibitionCell.swift in Sources */,
 				9B2FC1CE206048F100410E71 /* IndiaExhibition.xcdatamodeld in Sources */,
+				9BDCD69020754FD50042A84C /* EXHHomeViewContainer.swift in Sources */,
 				9BE79692206326E60019628E /* UIApplication.swift in Sources */,
+				9BAE021A20755A3D00BF5D47 /* LeftMenuCell.swift in Sources */,
 				9BE7968E206326380019628E /* UIViewController.swift in Sources */,
 				9B2FC2192060604600410E71 /* UserInfo.swift in Sources */,
 				9BE7967D2060EDEE0019628E /* EXHRegistrationController.swift in Sources */,
 				9B2FC1C6206048F100410E71 /* AppDelegate.swift in Sources */,
 				9B2FC207206051AA00410E71 /* EXHPostServicePath.swift in Sources */,
+				9BAE021C207570E700BF5D47 /* EXHFavouriteController.swift in Sources */,
 				9B2FC21320605A0D00410E71 /* EXHLoginViewModel.swift in Sources */,
 				9BE7967B2060EDD70019628E /* EXHSignInController.swift in Sources */,
 				9BE79690206326DE0019628E /* UITableViewExtension.swift in Sources */,
 				9B5FC8102072D67C004FB9A7 /* EXHGlobalNavigationController.swift in Sources */,
 				9BE796842061B5BF0019628E /* EXHEventsViewModel.swift in Sources */,
 				9B2FC2052060519000410E71 /* EXHWebApiWrapper.swift in Sources */,
+				9BDCD692207550B30042A84C /* EXHMapViewController.swift in Sources */,
 				9BDCD6872073F89D0042A84C /* StringExtension.swift in Sources */,
 				9B5FC80D2072AA4B004FB9A7 /* EXHContainerViewController.swift in Sources */,
 				9BDCD689207406740042A84C /* Constants.swift in Sources */,

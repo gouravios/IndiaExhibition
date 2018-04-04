@@ -1,25 +1,18 @@
 //
-//  EXHHomeViewController.swift
+//  EXHMapViewController.swift
 //  IndiaExhibition
 //
-//  Created by Kushank on 3/25/18.
+//  Created by gourav sharma on 4/4/18.
 //  Copyright © 2018 mobileprogramming. All rights reserved.
 //
 
 import UIKit
 
-class EXHHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
-    
-    
-    @IBOutlet weak var exhibitionTableView: UITableView!
-    
-    
-    
+class EXHMapViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-     exhibitionTableView.rowHeight = 350
-     
+
         // Do any additional setup after loading the view.
     }
 
@@ -38,21 +31,5 @@ class EXHHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return 10
-        
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "exhibitionCell") as! ExhibitionCell
-        
-        return cell
-    }
-    
-    
-    
-    
 
 }
-

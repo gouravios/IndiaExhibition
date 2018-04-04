@@ -23,7 +23,7 @@ enum SlideOutState {
 enum screenNavigationSegue : String {
     
     case EXHHomeViewNavigation = "EXHHomeViewNavigation"
-    
+    case EXHFavouriteNavigation = "EXHFavouriteNavigation"
 }
 
 // Constant values
@@ -39,14 +39,15 @@ enum screenNavigationSegue : String {
 // Constant values
 enum loadControllerWithIdentifier:String
 {
-    case EXHHomeViewController = "EXHHomeViewController"
+    case EXHHomeViewContainer = "EXHHomeViewContainer"
+    case EXHFavouriteController = "EXHFavouriteController"
     
 }
 
 class EXHContainerViewController: UIViewController {
     
    
-    var centerNavigationController: UINavigationController!
+    var centerNavigationController: EXHGlobalNavigationController!
     var currentState: SlideOutState = .collapsed
         {
         didSet {
@@ -60,8 +61,7 @@ class EXHContainerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationController!.isNavigationBarHidden = true
-        
-        
+    
         _ = self.shouldPerformSegue(withIdentifier: screenNavigationSegue.EXHHomeViewNavigation.rawValue, sender: self)
         
     }
@@ -184,7 +184,8 @@ extension EXHContainerViewController:SidePanelViewControllerDelegate
         centerNavigationController.viewControllers.removeAll()
         switch indexPressed {
         case 1:
-           _ = self.shouldPerformSegue(withIdentifier: screenNavigationSegue.EXHHomeViewNavigation.rawValue, sender: self)
+            _ = self.shouldPerformSegue(withIdentifier: screenNavigationSegue.EXHFavouriteNavigation.rawValue, sender: self)
+            
             break
         default:
           _ =  self.shouldPerformSegue(withIdentifier: screenNavigationSegue.EXHHomeViewNavigation.rawValue, sender: self)
@@ -200,13 +201,17 @@ extension EXHContainerViewController:SidePanelViewControllerDelegate
         var topviewController:EXHSliderSuperViewController?
         if identifier == screenNavigationSegue.EXHHomeViewNavigation.rawValue {
             
-            topviewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: loadControllerWithIdentifier.EXHHomeViewController.rawValue)  as? EXHHomeViewController
+            topviewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: loadControllerWithIdentifier.EXHHomeViewContainer.rawValue)  as? EXHHomeViewContainer
+            
+        } else if identifier == screenNavigationSegue.EXHFavouriteNavigation.rawValue {
+            
+            topviewController = UIStoryboard(name: "Main", bundle: Bundle.main).instantiateViewController(withIdentifier: loadControllerWithIdentifier.EXHFavouriteController.rawValue)  as? EXHFavouriteController
             
         }
        
         
         topviewController!.delegate = self
-        centerNavigationController = UINavigationController(rootViewController: topviewController!)
+        centerNavigationController = EXHGlobalNavigationController(rootViewController: topviewController!)
         self.view.addSubview(centerNavigationController!.view)
         addChildViewController(centerNavigationController!)
         centerNavigationController.didMove(toParentViewController: self)

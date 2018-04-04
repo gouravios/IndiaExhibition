@@ -14,19 +14,7 @@ class EXHGlobalNavigationController: UINavigationController  {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let logo = UIImage(named: "logo.png")
-        let imageView = UIImageView(image:logo)
-        self.navigationItem.titleView = imageView
-     
-    }
-    
-    func hideNavigationBackgroundView(_ hidden: Bool) {
-        self.backgroundView.isHidden = hidden
-    }
-    
-    func checkHideNavigationBar() {
-       
+      self.navigationController?.navigationBar.barTintColor = UIColor.red
     }
     
     func setNavigationTitle(_ title : String) {
