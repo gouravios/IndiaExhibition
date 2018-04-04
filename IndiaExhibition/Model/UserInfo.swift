@@ -2,7 +2,6 @@
 
 import Foundation
 
-
 struct EXHUserInfoRequest:EXHRequestable {
     var apiPath:String?
     var httpType:HttpType
@@ -37,34 +36,50 @@ class UserInfo:Identifiable {
             let jsonObj = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.allowFragments)
             
             print(jsonObj)
-            
-          //  var arrItems = [[String:Any]]()
+        
             if let dictJSONObj = jsonObj as? [String:Any] {
            
-                if let results = dictJSONObj["User"] {
+                 if let status = dictJSONObj["Status"]  {
                     
-                    let userInfo = UserInfo()
+                    let state = status as! Int
                     
-                    if let dict = results as? [String:Any] {
+                    if state == 0 {
                         
-                        userInfo.first_name = dict["FirstName"] as? String
-                        userInfo.last_name = dict["LastName"] as? String
-                        userInfo.email = dict["Email"] as? String
-                        userInfo.phone = dict["Phone"] as? String
-                        userInfo.password = dict["Password"] as? String
-                        userInfo.signType = dict["SignType"] as? String
-                        userInfo.userType = dict["UserType"] as? String
-                        userInfo.uniqueId = dict["UniqueId"] as? String
+                        if let results = dictJSONObj["User"] {
+                            
+                            let userInfo = UserInfo()
+                            
+                            if let dict = results as? [String:Any] {
+                                
+                                userInfo.first_name = dict["FirstName"] as? String
+                                userInfo.last_name = dict["LastName"] as? String
+                                userInfo.email = dict["Email"] as? String
+                                userInfo.phone = dict["Phone"] as? String
+                                userInfo.password = dict["Password"] as? String
+                                userInfo.signType = dict["SignType"] as? String
+                                userInfo.userType = dict["UserType"] as? String
+                                userInfo.uniqueId = dict["UniqueId"] as? String
+                            }
+                            
+                            return .success(userInfo)
+                            
+                        }
+                        
+                    } else {
+                        
+                        let errorTemp = NSError(domain:dictJSONObj["Message"] as! String , code:state, userInfo:nil)
+                        return .failure(errorTemp)
                     }
-                  
-                    return .success(userInfo)
-                  
-                }
+                    
+                 }
+        
             }
         }  catch let jsonError {
             
             return .failure(jsonError)
         }
+        
+        
         
         return nil
    }
