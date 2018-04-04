@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EXHHomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
+class EXHHomeViewController: EXHSliderSuperViewController, UITableViewDelegate, UITableViewDataSource{
     
     
     @IBOutlet weak var exhibitionTableView: UITableView!
@@ -55,3 +55,4 @@ class EXHHomeViewController: UIViewController, UITableViewDelegate, UITableViewD
     
 
 }
+

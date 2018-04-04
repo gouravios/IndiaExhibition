@@ -53,6 +53,7 @@ class EXHWebAPIWrapper {
                 request.httpBody = try objRequestable.pathType?.encodeBodyEnvelop()
                 
                 let task = session4.dataTask(with: request as URLRequest) { (data, response, error) in
+                    
                     guard let _: Data = data, let _: URLResponse = response, error == nil else {
                         completion(data,error)
                         return
